@@ -39,6 +39,10 @@ module.exports = {
       'on'
     ];
 
+    if (options.methods) {
+      analytics.push(...options.methods)
+    }
+
     analytics.factory = function (method) {
       return function () {
         const args = Array.prototype.slice.call(arguments)
@@ -53,7 +57,7 @@ module.exports = {
       analytics[key] = analytics.factory(key);
     }
 
-    analytics.SNIPPET_VERSION = '4.1.0';
+    analytics.SNIPPET_VERSION = '4.13.2';
 
     analytics.load = function (key, options) {
       const script = document.createElement('script')
