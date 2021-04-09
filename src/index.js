@@ -40,7 +40,7 @@ module.exports = {
     ];
 
     if (options.methods) {
-      analytics.push(...options.methods)
+      analytics.methods.push(...options.methods)
     }
 
     analytics.factory = function (method) {
